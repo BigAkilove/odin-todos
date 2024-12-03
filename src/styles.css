@@ -1,0 +1,17 @@
+body,html {
+    margin: 0;
+    padding: 0;
+}
+
+header { 
+    background-color: blue;
+    height: 200px;
+}
+
+.to-do {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 10px;
+}
