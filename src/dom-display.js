@@ -1,3 +1,4 @@
+import { distanceBetweenDates } from './time-left.js';
 export {displayProjects}
 
 const domContent = document.getElementById('content')
@@ -13,53 +14,41 @@ function displayProjects (project) {
     domContent.appendChild(container)
 
     const title = document.createElement('div')
-    title.classList.add('title')
+    title.classList.add('todo-title')
     let textNode = document.createTextNode(todo.title)
     title.appendChild(textNode)
     container.appendChild(title)
 
     const description = document.createElement('div')
     description.classList.add('description')
-    textNode = document.createTextNode(todo.description)
+    textNode = document.createTextNode(`Objective: ${todo.description}`)
     description.appendChild(textNode)
     container.appendChild(description)
 
-
-    const dueDate = document.createElement('div')
-    dueDate.classList.add('due-date')
-    textNode = document.createTextNode(todo.dueDate)
-    dueDate.appendChild(textNode)
-    container.appendChild(dueDate)
-
-
     const timeLeft = document.createElement('div')
     timeLeft.classList.add('time-left')
-    textNode = document.createTextNode(todo.timeLeft())
+    textNode = document.createTextNode(`Time left: ${todo.timeLeft}`)
     timeLeft.appendChild(textNode)
     container.appendChild(timeLeft)
 
 
     const priority = document.createElement('div')
     priority.classList.add('priority')
-    textNode = document.createTextNode(todo.priority)
+    textNode = document.createTextNode(`Importance: ${todo.priority}`)
     priority.appendChild(textNode)
     container.appendChild(priority)
 
 
     const notes = document.createElement('div')
     notes.classList.add('notes')
-    textNode = document.createTextNode(todo.notes)
+    textNode = document.createTextNode(`Notes: ${todo.notes}`)
     notes.appendChild(textNode)
     container.appendChild(notes)
 
-
     const checklist = document.createElement('div')
     checklist.classList.add('checklist')
-    textNode = document.createTextNode(todo.checklist)
+    textNode = document.createTextNode(todo.checklistEmote)
     checklist.appendChild(textNode)
     container.appendChild(checklist)
-
-
     }
-        
 }
